@@ -17,6 +17,7 @@ public class MovieReccomender
     public static void main(String[] args)
     {
         // TODO code application logic here
+        Prototype.main(args);
     }
     
     // This method will take the person's choices and try to find a movie 
