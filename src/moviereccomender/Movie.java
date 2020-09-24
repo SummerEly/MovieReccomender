@@ -17,15 +17,26 @@ public class Movie
     String rating;
     int releaseYear;
     int idNum;
-    ArrayList<String>genres;
-
-    public Movie(String name, String rating, int releaseYear, int idNum, ArrayList<String> genres)
+    ArrayList<Boolean>genres;
+    // [action, comedy, drama, documentary, sci-fi, animated, horror, mystery]
+    ArrayList<Boolean> streamingServices;
+    // [netflix, hulu, amazon]
+    
+    int rottenTomatoes;
+    int imdb;
+    int metacritic;
+    
+    
+    
+    public Movie(String name, String rating, int releaseYear, int idNum, 
+            ArrayList<Boolean> genres, ArrayList<Boolean> streamingServic)
     {
         this.name = name;
         this.rating = rating;
         this.releaseYear = releaseYear;
         this.idNum = idNum;
         this.genres = genres;
+        this.streamingServices = streamingServices;
     }
 
     public String getName()
@@ -68,14 +79,26 @@ public class Movie
         this.idNum = idNum;
     }
 
-    public ArrayList<String> getGenres()
+    public ArrayList<Boolean> getGenres()
     {
         return genres;
     }
 
-    public void setGenres(ArrayList<String> genres)
+    public void setGenres(ArrayList<Boolean> genres)
     {
         this.genres = genres;
     }
+    
+    public int computeGroovyScore(){
+        int groovyScore;
+        int a = rottenTomatoes;
+        int b = imdb * 10;
+        int c = metacritic;
+        
+        groovyScore = (a + b + c)/3;
+        return rgoovyScore;
+    }
+    
+    
     
 }
